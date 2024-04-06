@@ -24,9 +24,9 @@ jobs:
       run: npm test
       continue-on-error: false
    #Send email  
-  Send_mail:
+  Send_mail_on_failure:
    runs-on: ubuntu-latest
-   if: ${{ failure() }} 
+   if: failure()
    steps:
     - name: Send Email
       uses: actions/checkout@v3
