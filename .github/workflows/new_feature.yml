@@ -8,7 +8,7 @@ on:
     branches:
      - 'main'
 jobs:
-  Lancement CI/CD:
+  Execution_pipeline:
    runs-on: ubuntu-latest
 #test
    steps:
@@ -51,7 +51,7 @@ jobs:
       continue-on-error: false
 
    #Envoi d'un mail au contributeur en cas d'echec d'un job  
-  Notification par mail:
+  Notification_par_mail:
    runs-on: ubuntu-latest
    needs: tests
    if: failure()
