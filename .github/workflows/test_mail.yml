@@ -1,0 +1,29 @@
+name: Run tests
+
+on:
+  push: 
+   branches:
+    - 'main'
+  pull_request:
+    branches:
+     - 'main'
+jobs:
+  tests:
+   runs-on: ubuntu-latest
+
+steps:
+  - name: Send Email
+    uses: hilarion5/send-mail@v1
+    with:
+      smtp-server: smtp.example.com
+      smtp-port: 465
+      smtp-secure: true
+      from-email: sender@example.com
+      to-email: recipient1@example.com,recipient2@example.com
+      username: yourusername
+      password: yourpassword
+      subject: Test Email
+      body: This is a test email sent from GitHub Actions.
+      html: |
+        <h1>This is a test email</h1>
+        <p>Test Paragraph</p>
