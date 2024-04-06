@@ -6,19 +6,17 @@
     "test": "ava",
     "prepare": "husky install",
     "lint": "eslint ."
-    
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "ava": "^5.1.0",
-    "eslint": "^8.44.0",
-    "prettier": "^2.8.8",
-    "husky": "^8.0.0"
+    "eslint": "^8.57.0",
+    "husky": "^8.0.0",
+    "prettier": "^2.8.8"
   },
   "dependencies": {
     "lint-staged": "^13.2.3"
-  },
-  
+  }
 }
