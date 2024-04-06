@@ -37,7 +37,7 @@ jobs:
 
     - name: Run ESLint and save report
       run: |
-        npx eslint myApp.js --format json --output-file eslint-report.js
+        npx eslint src/myApp.js --format json --output-file eslint-report.js
 
     - name: Upload ESLint report
       uses: actions/upload-artifact@v2
