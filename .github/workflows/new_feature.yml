@@ -26,7 +26,7 @@ jobs:
    #Send email  
   Send_mail:
    runs-on: ubuntu-latest
- 
+ if: ${{ failure() && github.event_name == 'push' }} 
    steps:
     - name: Send Email
       uses: actions/checkout@v3
