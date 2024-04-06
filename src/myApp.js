@@ -1,3 +1,6 @@
-console.log("Hello World!");
+console.log('Hello, Demo');
 
-//var a = 42;
+var moment = require('moment');
+var date = moment().format('LL');
+
+console.log(date);
