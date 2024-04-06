@@ -8,7 +8,7 @@ on:
     branches:
      - 'main'
 jobs:
-  tests:
+  Lancement CI/CD:
    runs-on: ubuntu-latest
 #test
    steps:
@@ -38,7 +38,7 @@ jobs:
       run: |
         npx eslint src/myApp.js --format json --output-file eslint-report.js
 
-    - name: Upload ESLint report
+    - name: Generer le rapport ESlint
       uses: actions/upload-artifact@v2
       with:
         name: eslint-report
@@ -51,7 +51,7 @@ jobs:
       continue-on-error: false
 
    #Envoi d'un mail au contributeur en cas d'echec d'un job  
-  Send_mail_on_failure:
+  Notification par mail:
    runs-on: ubuntu-latest
    needs: tests
    if: failure()
