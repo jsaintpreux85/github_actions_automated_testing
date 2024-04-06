@@ -1,0 +1,44 @@
+name: Run tests
+
+on:
+  push: 
+   branches:
+    - 'main'
+  pull_request:
+    branches:
+     - 'main'
+jobs:
+  tests:
+   runs-on: ubuntu-latest
+#test
+   steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+       node-version: 16.18
+    - name: Install Dependencies
+      run: npm ci
+    - name: Run tests
+      run: npm test
+
+   #Send email  
+  Send_mail:
+   runs-on: ubuntu-latest
+ 
+   steps:
+    - name: Send Email
+      uses: actions/checkout@v3
+      with:    
+         server_address: smtp.gmail.com
+         # Optional port (defaults to 465)
+         server_port: 465
+         username: saintpreuxjerry
+         password: ${{secrets.NOTIFY_PASSWORD}}
+         sender: Jerry Saint-Preux
+         from: saintpreuxjerry@gmail.com
+         to: djlotbo@gmail.com
+         subject: Github Actions Test mail
+         body: This is a test email sent from GitHub Actions.
+         contentType: text/plain
