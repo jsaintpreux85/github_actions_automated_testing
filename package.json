@@ -4,7 +4,9 @@
   "description": "",
   "scripts": {
     "test": "ava",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "eslint ."
+    
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,6 @@
   },
   "dependencies": {
     "lint-staged": "^13.2.3"
-  }
+  },
+  
 }
