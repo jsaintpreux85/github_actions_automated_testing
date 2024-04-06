@@ -48,8 +48,8 @@ jobs:
     - name: Build Docker Image
       run: |
           # Construire l'image Docker
-         # docker build -t myapp.
-          docker buildx build -t https://github.com/username/repository.git
+          #docker build -t myapp.
+          docker buildx build -t https://github.com/jsaintpreux85/github_actions_automated_testing.git
       continue-on-error: false
 
    #Send email  
