@@ -18,26 +18,16 @@ jobs:
       uses: actions/setup-node@v2
       with:
        node-version: 16.18
-      
     - name: Install Dependencies
-      run: |
-          npm ci
-          npm install
-          npm install -g docker-compose
-
+      run: npm ci
+	  run: npm install -g docker-compose
+	  
     - name: Automated Code Review
-      run: |
-          # Exécuter des outils de révision automatique du code
-          # Exemple avec ESLint
-          npm run lint
-     continue-on-error: false
-
-     - name: Run tests
-       run: npm test
-       continue-on-error: false
-
-
-   #Send email if   
+      run: npm run lint
+    - name: Run tests
+      run: npm test
+      continue-on-error: false
+   #Send email  
   Send_mail_on_failure:
    runs-on: ubuntu-latest
    needs: tests
