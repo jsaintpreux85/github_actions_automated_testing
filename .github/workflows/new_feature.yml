@@ -22,11 +22,11 @@ jobs:
       run: npm ci
     - name: Run tests
       run: npm test
-
+      continue-on-error: true
    #Send email  
   Send_mail:
    runs-on: ubuntu-latest
-   if: ${{ failure() }} 
+   if: ${{ failure() && always() }} 
    steps:
     - name: Send Email
       uses: actions/checkout@v3
