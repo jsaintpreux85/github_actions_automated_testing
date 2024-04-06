@@ -20,7 +20,7 @@ jobs:
        node-version: 16.18
     - name: Install Dependencies
       run: npm ci
-  	- name: Install Docker
+  	- name: Install Docker compose
       run: npm install -g docker-compose
     - name: Run tests
       run: npm test
