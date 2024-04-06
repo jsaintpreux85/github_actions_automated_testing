@@ -34,6 +34,16 @@ jobs:
     - name: Run tests
       run: npm test
       continue-on-error: false
+
+    - name: Run ESLint and save report
+      run: |
+        npx eslint app.js --format json --output-file eslint-report.js
+
+    - name: Upload ESLint report
+      uses: actions/upload-artifact@v2
+      with:
+        name: eslint-report
+        path: eslint-report.js
    #Send email  
   Send_mail_on_failure:
    runs-on: ubuntu-latest
