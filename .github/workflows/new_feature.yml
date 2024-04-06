@@ -26,7 +26,8 @@ jobs:
    #Send email  
   Send_mail_on_failure:
    runs-on: ubuntu-latest
-   #if: failure()
+   needs: tests
+   if: failure()
    steps:
     - name: Send Email
       uses: actions/checkout@v3
