@@ -47,7 +47,7 @@ jobs:
     - name: Construction de l'image Docker 
       run: |
           # Construire l'image Docker
-          docker buildx build -t https://github.com/jsaintpreux85/github_actions_automated_testing.git
+          #docker buildx build -t https://github.com/jsaintpreux85/github_actions_automated_testing.git
       continue-on-error: false
 
    #Envoi d'un mail au contributeur en cas d'echec d'un job  
