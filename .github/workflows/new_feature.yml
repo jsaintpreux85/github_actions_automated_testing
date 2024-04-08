@@ -30,6 +30,12 @@ jobs:
           #Installation du package Eslint
           npm run lint
       continue-on-error: false
+    - name: Lancement de CodeScene Analysis
+      env:
+        CODESCENE_TOKEN: ${{ secrets.CODE_SCENE_KEY }}
+      run: |
+        codescene analyze --project https://codescene.io/projects/52148 --branch main --base origin/main
+      continue-on-error: false
     - name: Execution des tests automatisés
       run: npm test
       continue-on-error: false
